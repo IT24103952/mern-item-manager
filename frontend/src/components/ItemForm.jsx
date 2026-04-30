@@ -44,7 +44,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
         required
       />
 
-      <label>Status</label>
+      <label> Availability Status </label>
       <input name="status" value={formData.status} onChange={handleChange} required />
 
       <label>Description</label>
