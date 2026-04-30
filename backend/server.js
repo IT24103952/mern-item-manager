@@ -8,33 +8,33 @@ dotenv.config();
 
 const app = express();
 
-// FIXED CORS CONFIG (IMPORTANT)
+// ✅ CORS (FIXED)
 app.use(
   cors({
-    origin: "*", // allow all (quick fix)
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
   })
 );
 
-// Handle preflight requests explicitly
+// handle preflight
 app.options("*", cors());
 
-// Middleware
+// middleware
 app.use(express.json());
 
-// Test route
+// test route
 app.get("/", (req, res) => {
   res.json({ message: "Item Manager API is running..." });
 });
 
-// Routes
+// routes
 app.use("/api/items", itemRoutes);
 
-// Port
+// port
 const PORT = process.env.PORT || 5000;
 
-// MongoDB connection
+// DB connect
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
