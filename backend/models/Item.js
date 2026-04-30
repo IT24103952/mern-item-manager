@@ -21,7 +21,7 @@ const itemSchema = new mongoose.Schema(
       type: String,
       required: [true, "Item status is required"],
       trim: true,
-    }
+    },
     description: {
       type: String,
       required: [true, "Description is required"],
