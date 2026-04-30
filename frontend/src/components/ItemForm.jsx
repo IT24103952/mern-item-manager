@@ -6,6 +6,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
       name: "",
       category: "",
       price: "",
+      status: "",
       description: "",
       imageUrl: "",
     }
@@ -42,6 +43,9 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
         onChange={handleChange}
         required
       />
+
+      <label>Status</label>
+      <input name="status" value={formData.status} onChange={handleChange} required />
 
       <label>Description</label>
       <textarea
