@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
+  baseURL: "https://863303c8-f53f-4bf5-b4b2-43acae85e109-00-3sj3nuh9ltkzu.pike.replit.dev/api",
 });
 
 export const getItems = () => API.get("/items");
